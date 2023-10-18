@@ -1,0 +1,174 @@
+html
+{
+  scroll-behavior: smooth;
+}
+*{
+        margin: 0;
+         padding: o;
+        font-family: sans-serif;
+    }
+    nav{
+        display: flex;
+        align-items:center;
+        justify-content:space-around;
+        flex-direction: row;
+        height:15vh;
+    }
+    nav a
+    {
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.51);
+      font-family:Arial, Helvetica, sans-serif;
+      font-size: 25px;
+      font-weight: bold;
+    
+    }
+    nav a:hover{
+      color:#f4aa61db;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+body{
+  background-color: #000000;
+}
+.hero{
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow:hidden;
+        background-color: #1313131b;
+}
+.hero-video {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -4;
+    
+}
+
+.hero h2
+{
+  color:rgba(234, 229, 229, 0.579);
+  font-family:math;
+    font-size:40px; 
+}
+.start-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    #start-button {
+      background-color: #fffcfc84;
+      color: rgb(43, 42, 42);
+      border: 2px solid transparent;
+    padding: 5px;
+    border-radius: 15px;
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 19px;
+    font-weight: bold;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+    animation: pulse 0.5s alternate infinite; /* Add CSS animation */
+    animation-delay: 5s; /* Delay the animation start by 5 seconds */
+    animation-iteration-count: infinite; /* Set to infinite to continue animation */
+    animation-duration: 5s; /* Duration of each animation loop */
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+      }
+    }
+    
+    #start-button:hover {
+      background-color: #080808b8;
+        color:rgba(207, 204, 204, 0.581);
+        border-color: rgb(23, 23, 23);
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .word {
+        margin: auto;
+        position:absolute;
+        top:50%;
+        left:5%;
+        transform :translateY(-50%);
+        z-index:5;
+        height:25%;
+        color: white;
+        font: 700 normal 2.5em ;
+        font-size: 50px;
+        text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+      }
+      .logo
+      {
+        width:2%;
+        background-size: cover;
+        background-position: center;
+      }
+      .links
+      {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .start-button-container{
+        position:absolute;
+        top:60%;
+        left:5%;
+      }
+      @media (max-width: 768px) {
+       nav{
+          font-size: 10px;
+       }
+        .word {
+          font-size: 2em; /* Adjust the font size for smaller screens */
+        }
+      }
+      
+    
+    footer
+    {
+      background-color: black;
+      color: white;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+    }
+    img{
+      width:100px;
+    }
+    main {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 20px;
+      max-width: 800px;
+    margin: 0 auto;
+    margin-top:20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #252222;
+      font-size: 28px;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #000000;
+      margin-bottom: 20px;
+    }

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+    <style>
+        /* Reset some default styling */
+        body, html {
+            width: 100%;
+            margin: 0;
+        }
+
+        /* Styling for the background */
+        body {
+            background-image: url("5.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            /* display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end; */
+        }
+         h2{
+            font-size:30px;
+            color:#ccc;
+            text-align: center;
+            
+         }
+        /* Styling for the main container holding microphone and voice wave */
+        #microphone-container {
+            height:60vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* margin-top: 0; */
+            flex-wrap: nowrap;
+            flex-direction: column-reverse;
+            align-content: space-around;
+        }
+
+        /* Styling for the input box container */
+        #input-box-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Styling for the microphone button */
+        .microphone {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: green url('microphone.png') center/cover;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        /* Hover effect for the microphone button */
+        .microphone:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* Styling for the voice wave animation */
+        #voice-wave-container {
+            display: flex; /* Initially hidden */
+            flex-direction: column; /* Optional: Align bars vertically */
+            align-items: center; /* Optional: Center bars horizontally */
+            justify-content: center; /* Optional: Center bars vertically */
+            margin-top:20px;
+            width: 200px;
+            height: 80px;
+        }
+
+        /* Styling for the input text box */
+        input[type="text"] {
+            width: 80%;
+            height: 25px;
+            padding: 9px;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Styling for the input button */
+        #text-button {
+            height: 40px;
+            background-color: rgb(49, 246, 15);
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 12px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        /* Hover effect for the input button */
+        #text-button:hover {
+            background-color: aquamarine;
+        }
+
+        /* Styling for the voice wave bars container */
+        #bars {
+            display: flex;
+            /* margin-top: 80px; Adjusted margin-top for better placement */
+            justify-content: center;
+            align-items: center;
+            display:none;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            height: 50px;
+            justify-content: space-around;
+            background-color: black;
+            padding:5px;
+        }
+        nav a{
+            text-decoration: none;
+            color:white;
+            cursor: pointer;
+            font-size: 25px;
+
+        }
+        nav a:hover{
+      color:#3c3b3bdb;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+       
+        #close-button
+        {
+            display: none;
+            height:50px;
+            width:50px;
+            background-color: red;
+            text-align: center;
+            text-decoration: double;
+            border-radius: 50%;
+            font-size: 50px;
+            color: white;
+            cursor: pointer;
+            margin-top: 40px;
+            font-weight: bolder;
+        }
+
+        /* Styling for individual voice wave bars */
+        .bar {
+            background: #fbfbfb;
+            bottom: 1px;
+            height: 3px;
+            width: 10px;
+            margin: 0px 4px;
+            border-radius: 5px;
+            animation: sound 0ms -600ms linear infinite alternate;
+        }
+
+        /* Keyframe animation for the voice wave bars */
+        @keyframes sound {
+            0% {
+                opacity: .35;
+                height: 3px;
+            }
+            100% {
+                opacity: 1;
+                height: 70px;
+            }
+        }
+
+        /* Simplified animation durations */
+        .bar:nth-child(1) { animation-duration: 474ms; }
+        .bar:nth-child(2) { animation-duration: 433ms; }
+        .bar:nth-child(3) { animation-duration: 407ms; }
+        .bar:nth-child(4) { animation-duration: 458ms; }
+        .bar:nth-child(5) { animation-duration: 400ms; }
+        .bar:nth-child(6) { animation-duration: 427ms; }
+        .bar:nth-child(7) { animation-duration: 441ms; }
+        .bar:nth-child(8) { animation-duration: 419ms; }
+        .bar:nth-child(9) { animation-duration: 487ms; }
+        .bar:nth-child(10) { animation-duration: 442ms; }
+    </style>
+  
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">contact us</a>
+        <a href="references.html">Resources</a>
+    </nav><br>
+    <div><h2>Ask me Something!!</h2></div>
+    <div id="microphone-container">
+        <!-- Close button (hidden initially) -->
+        <div class="close-button" id="close-button">&times;</div><br>
+        <!-- Microphone button -->
+        <div class="microphone" id="microphone"></div><br>
+        <!-- Container for voice wave animation -->
+        <div id="voice-wave-container">
+            <div id="bars">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+    
+<!-- Input box container -->
+<div id="input-box-container">
+    <!-- Text input box -->
+    <input type="text" id="text-box" placeholder="Enter a command or ask something! 😀">
+    <!-- Enter button -->
+    <button type="button" id="text-button" disabled>submit</button>
+</div>
+
+<script>
+    const microphoneButton = document.getElementById('microphone');
+    const voicewave = document.getElementById("bars");
+    const closeButton = document.getElementById('close-button');
+// Event listener for microphone button click
+microphoneButton.addEventListener('click', function() {
+    microphoneButton.style.display = 'none'; // Hide the microphone button
+    voicewave.style.display = 'flex'; // Show the voice wave container
+    closeButton.style.display = 'block'; // Show the close button
+    closeButton.addEventListener('click', stopAnimation);
+});
+function stopAnimation() {
+    microphoneButton.style.display = 'block';
+    voicewave.style.display = 'none';
+    closeButton.style.display = 'none';
+    closeButton.removeEventListener('click', stopAnimation);
+}
+  // Get references to the input element and the text button
+// Get references to the input element and the text button
+const textBox = document.getElementById('text-box');
+const textButton = document.getElementById('text-button');
+
+// Initially disable the text button and set its background color to gray
+textButton.disabled = true;
+textButton.style.backgroundColor = 'gray';
+
+// Add an input event listener to the text box
+textBox.addEventListener('input', function() {
+    // Check if the text box is empty
+    if (textBox.value.trim() === '') {
+        // If it's empty, disable the text button and change its background color to gray
+        textButton.disabled = true;
+        textButton.style.backgroundColor = 'gray';
+    } else {
+        // If there is text, enable the text button and set its background color to green
+        textButton.disabled = false;
+        textButton.style.backgroundColor = 'rgb(49, 246, 15)'; // Green color
+    }
+});
+
+const startButton = document.getElementById("text-button");
+
+      startButton.addEventListener("click", function () {
+        window.location.href = "output.html"; // Replace with the actual URL of your Virtual Assistant page
+      });
+</script>  
+</body>
+</html>

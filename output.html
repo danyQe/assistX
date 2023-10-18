@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output</title>
+    <style>
+        body, html {
+            width: 100%;
+            margin: 0;
+        }
+
+        /* Styling for the background */
+        body {
+            background-image: url("5.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .chat-container {
+          
+            
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        .chat-output {
+            margin-top:0;
+            margin-bottom:10px;
+            height:500px;
+            width: 1000px;
+            border-radius: 5px;
+            background-color: #4949499a;
+            border: 1px solid #e3cbcb;
+            color:rgb(255, 255, 255)
+       /* padding-left:     
+             margin-bottom: 20px;
+             overflow-y: scroll; 
+            border-radius: 10px;
+
+            max-height: 50vh; */
+
+        }
+
+        .input-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .user-message {
+            background-color: #314c69;
+            text-align: right;
+            color: #4caf50;
+        }
+
+        .bot-message {
+            text-align: left;
+            color: #2196F3;
+        }
+
+        .message-input {
+            width: 85%;
+            height: 25px;
+            padding: 9px;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+        @media(min-width:200px){
+            body{
+            background-image: url('5.jpg');
+            background-size:cover;
+            }
+        }
+
+        .submit-button {
+            height: 40px;
+            background-color: rgb(49, 246, 15);
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .submit-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            height: 50px;
+            justify-content: space-around;
+            background-color: black;
+            padding:5px;
+        }
+        nav a{
+            text-decoration: none;
+            color:white;
+            cursor: pointer;
+            font-size: 25px;
+
+        }
+        nav a:hover{
+      color:#2e2e2edb;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">contact us</a>
+        <a href="references.html">Resources</a>
+    </nav><br>
+    <div class="chat-container">
+        <div class="chat-output" id="chatOutput">Output:</div>
+    </div>
+</div>
+<div class="input-container">
+    <!-- <input type="text" class="message-input" id="messageInput" placeholder="Enter your message">
+    <button class="submit-button" id="submitButton" disabled>Submit</button> -->
+    <textarea class="message-input" id="messageInput" placeholder="Enter a command or ask something! 😀"></textarea><br>
+    <button class="submit-button" id="submitButton" disabled>Submit</button>
+</div>
+
+    <script>
+        const messageInput = document.getElementById('messageInput');
+        const submitButton = document.getElementById('submitButton');
+        const chatOutput = document.getElementById('chatOutput');
+
+        messageInput.addEventListener('input', () => {
+            submitButton.disabled = messageInput.value.trim() === '';
+        });
+
+        submitButton.addEventListener('click', () => {
+            const message = messageInput.value.trim();
+            if (message !== '') {
+                // Display user message
+                displayMessage('You: ' + message);
+
+                // Simulate ChatGPT response (in a real application, this would be an API call)
+                const response = 'ChatGPT: This is a sample response for "' + message + '"';
+                displayMessage(response);
+
+                // Clear input field
+                messageInput.value = '';
+                submitButton.disabled = true;
+            }
+        });
+
+        function displayMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            chatOutput.appendChild(messageElement);
+
+            // Scroll to the bottom of the chat output
+            chatOutput.scrollTop = chatOutput.scrollHeight;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-Based Virtual Assistant Documentation</title>
+    <style>
+        /* Reset some default styles */
+        body,
+        h1,
+        h2,
+        p,
+        ul,
+        ol,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #222;
+            color: #ddd;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #333;
+            border-radius: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: 550px;
+        
+        }
+
+        .image-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+        #libraries-used a {
+    color: rgb(244, 238, 238);
+    text-decoration: none; /* Removes underlines from links */
+}
+
+#libraries-used a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color:red;
+}
+
+
+        footer {
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Web-Based Virtual Assistant Documentation</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#technologies">Technologies Used</a></li>
+            <li><a href="#libraries-used">Libraries Used</a></li>
+            <li><a href="#implementation">Implementation</a></li>
+            <li><a href="#user-guide">User Guide</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    </nav>
+
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>
+            This documentation provides a detailed overview of the Web-Based Virtual Assistant project, which replaces the previous Tkinter-based application with a web-based interface. The project aims to create a user-friendly virtual assistant that operates in a web browser and responds to voice and text commands.
+        </p>
+    </section>
+
+    <section id="architecture">
+        <h2>Architecture</h2>
+        <p>
+            The Web-Based Virtual Assistant uses a client-server architecture. The server is built with Flask, a Python web framework, and serves as the backend. The frontend is designed with HTML, CSS, and JavaScript. Voice recognition and processing logic are handled on the server.
+        </p>
+        <div class="image-container">
+            <img src="flowchart.jpg" alt="Architecture Diagram">
+        </div>
+    </section>
+    
+    <section id="features">
+        <h2>Features</h2>
+        <ul>
+            <li>Voice recognition for user commands</li>
+            <li>Text input for user interaction</li>
+            <li>Integration with OpenAI's GPT-3.5 for natural language understanding</li>
+            <li>Task execution, including music playback, web browsing, reminders, and more</li>
+            <!-- Add more features -->
+        </ul>
+    </section>
+
+    <section id="technologies">
+        <h2>Technologies Used</h2>
+        <ul>
+            <li>Flask (Backend)</li>
+            <li>HTML, CSS, JavaScript (Frontend)</li>
+            <li>pyttsx3 (Text-to-Speech Conversion)</li>
+            <li>SpeechRecognition (Voice Recognition)</li>
+            <li>OpenAI's GPT-3.5 (Natural Language Processing)</li>
+            <!-- Add more technologies as needed -->
+        </ul>
+    </section>
+
+    <section id="libraries-used">
+        <h2>Libraries Used</h2>
+        <ul>
+            <li><a href="https://flask.palletsprojects.com/">Flask</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+            <li><a href="https://pypi.org/project/pyttsx3/">pyttsx3</a></li>
+            <li><a href="https://pypi.org/project/SpeechRecognition/">SpeechRecognition</a></li>
+            <li><a href="https://beta.openai.com/">OpenAI's GPT-3.5</a></li>
+            <!-- Add more library links as needed -->
+        </ul>
+    </section>
+
+    <section id="implementation">
+        <h2>Implementation</h2>
+        <p>
+            The project is implemented using Flask for the server-side logic and HTML, CSS, and JavaScript for the user interface. Voice recognition is performed on the server using the SpeechRecognition library. OpenAI's GPT-3.5 is integrated to understand and respond to user queries.
+        </p>
+        <pre>
+            <code>
+                <!-- Include code samples and explanations here -->
+            </code>
+        </pre>
+    </section>
+
+    <section id="user-guide">
+        <h2>User Guide</h2>
+        <p>
+            To use the Web-Based Virtual Assistant:
+        </p>
+        <ol>
+            <li>Open a web browser and navigate to the provided URL.</li>
+            <li>Click the microphone button or type your command in the text input box.</li>
+            <li>The virtual assistant will respond to your command.</li>
+        </ol>
+    </section>
+
+    <section id="conclusion">
+        <h2>Conclusion</h2>
+        <p>
+            In conclusion, the Web-Based Virtual Assistant project represents a significant leap forward in creating a user-friendly virtual assistant accessible via web browsers. The project combines the power of Flask for backend logic, HTML, CSS, and JavaScript for the frontend, and integration with OpenAI's GPT-3.5 for natural language understanding.
+        </p>
+        <p>
+            This virtual assistant empowers users to perform various tasks seamlessly through voice and text commands, including music playback, web browsing, setting reminders, and more. The modern web technologies used in this project enhance user interaction and convenience, making it a valuable tool for a wide range of applications.
+        </p>
+    </section>
+
+    <footer>
+        <div style="background-color: #444; padding: 20px;">
+            <p>&copy; 2023 Web-Based Virtual Assistant Project</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for interactivity here
+        // You can add animations and interactive features using JavaScript
+    </script>
+</body>
+
+</html>
